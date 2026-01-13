@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.IO.Pipelines;
 
 class Program
@@ -7,8 +8,8 @@ class Program
     {
         int magic_number = 27;
 
-        do 
-        { 
+        
+        while (true) { 
             Console.WriteLine($"What is the Magic number: {magic_number}");
             Console.Write("What is your guess: ");
             string guess = Console.ReadLine();
@@ -24,9 +25,18 @@ class Program
             else
             {
                 Console.WriteLine("You guessed it!");
-                break;
+                Console.Write("Do you want to play again? Yes/No: ");
+                string play_again = Console.ReadLine();
+                if (play_again.Equals("Yes"))
+                {
+                    return;
+                }
+                else
+                {
+                    break;
+                }
             }
-        } while (true);
+        }
 
     }
 }
