@@ -1,9 +1,9 @@
 using System;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning04 World!");
+        Console.WriteLine("Welcome to the Journal Program!");
     }
 }
