@@ -19,27 +19,27 @@ public class Program
             if (choice == 1)
             {
                 //Entry new_entry = new Entry();
-                string wirting_prompt = prompts.get_prompt();
+                string wirting_prompt = prompts.GetPrompt();
                 Console.WriteLine(wirting_prompt);
                 string user_input = Console.ReadLine();
                 //Console.WriteLine(user_input + wirting_prompt);
-                user_journal.save_entries(user_input, wirting_prompt);
+                user_journal.SaveEntries(user_input, wirting_prompt);
                 
                
             }
             else if (choice == 2)
             {
-                user_journal.display_entries();
+                user_journal.DisplayEntries();
             }
             
             else if (choice == 3)
             {
-                
+                user_journal = user_journal.LoadEntries();
             }
 
             else if (choice == 4)
             {
-                user_journal.save_to_file(user_journal.entries);
+                user_journal.SaveToFile(user_journal._entries);
             }
             
             else

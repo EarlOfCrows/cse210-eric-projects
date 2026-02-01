@@ -8,11 +8,10 @@ public class Menu
     public String _load = "3. Load";
     public String _save = "4. Save";
     public String _quit = "5. Quit";
-    public void run()
-    {
-        static String display_menu(string write)
+
+        static void DisplayMenu()
         {
-            return write;
+            Menu menu = new Menu();
+            Console.WriteLine($"Please select one of the following choices:\n{menu._write}\n{menu._display}\n{menu._load}\n{menu._save}\n{menu._quit}");
         }
-    }
 }
