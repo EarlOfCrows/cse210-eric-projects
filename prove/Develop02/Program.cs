@@ -7,14 +7,14 @@ public class Program
     { 
         Console.WriteLine("Welcome to the Journal Program!");
         Boolean in_use = true;
+        Journal user_journal = new Journal();
         while (in_use)
         {
             Menu menu = new Menu();
             Prompt prompts = new Prompt();
-            Journal user_journal = new Journal();
 
             Console.WriteLine($"Please select one of the following choices:\n{menu._write}\n{menu._display}\n{menu._load}\n{menu._save}\n{menu._quit}");
-            Console.Write("What would you like to do?");
+            Console.Write("What would you like to do? ");
             int choice = int.Parse(Console.ReadLine());
             if (choice == 1)
             {
@@ -24,14 +24,24 @@ public class Program
                 string user_input = Console.ReadLine();
                 //Console.WriteLine(user_input + wirting_prompt);
                 user_journal.save_entries(user_input, wirting_prompt);
-                Console.WriteLine(user_journal.entries);
                 
                
             }
-            if (choice == 2)
+            else if (choice == 2)
+            {
+                user_journal.display_entries();
+            }
+            
+            else if (choice == 3)
             {
                 
             }
+
+            else if (choice == 4)
+            {
+                user_journal.save_to_file(user_journal.entries);
+            }
+            
             else
             {
                 in_use = false;

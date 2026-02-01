@@ -4,18 +4,17 @@ public class Entry
 {
     public string _input;
     public string prompts;
-    public void run()
+    public string Date;
+    static string get_prompts()
     {
-        static string get_prompts()
-        {
-            Prompt prompts = new Prompt();
-            string prompt = prompts.get_prompt();
-            return prompt;
-        }
-
-        static void display_entry()
-        {
-            
-        }
+        Prompt prompts = new Prompt();
+        string prompt = prompts.get_prompt();
+        return prompt;
     }
+
+    static void display_entry()
+    {
+        
+    }
+    
 }
