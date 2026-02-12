@@ -1,7 +1,7 @@
 public class Scriptures
 {
     public List<Scriptures> all_scriptures = new List<Scriptures>();
-    public List<Words> _words;
+    private List<Words> _words;
     private string _verseText;
     private Reference _reference;
 
@@ -20,6 +20,7 @@ public class Scriptures
     public string DisplayScripture()
     {
         string display_text = "";
+        int hidden_words = 0;
         foreach (Words word in _words)
         {
             if (word.GetHidden() == true)
@@ -30,10 +31,15 @@ public class Scriptures
                     display_text += "_";
                 }
                 display_text += " ";
+                hidden_words ++;
             }
             else
             {
             display_text += word.GetText();
+            }
+            if (hidden_words == _words.Count())
+            {
+                return "";
             }
         }
         return _reference.GetReference() + " " + display_text;

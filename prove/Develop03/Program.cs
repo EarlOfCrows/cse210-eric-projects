@@ -31,8 +31,16 @@ class Program
             }
             else
             {
+                if (current_scripture.DisplayScripture() != "")
+                    {
+                        Console.WriteLine(current_scripture.DisplayScripture());
+                    }
+                    else
+                    {
+                        break;
+                    }
                 current_scripture.HideWords();
-                Console.WriteLine(current_scripture.DisplayScripture());
+
             }
         }
         
