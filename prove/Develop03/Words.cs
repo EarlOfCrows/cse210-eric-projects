@@ -22,7 +22,7 @@ public class Words
         Random random = new Random();
         List<Words> new_words = words;
         int loop_guard = 0;
-        for(int i = 0; i<3; i++)
+        for(int i = 0; i<(words.Count()/8); i++)
         {
             int random_index = random.Next(words.Count());
             if(words[random_index]._hidden == false){
